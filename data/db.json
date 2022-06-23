@@ -1,0 +1,12 @@
+{
+    "users": [
+        {
+            "email": "admin@admin.be",
+            "pwd": "admin"
+        },
+        {
+            "email": "m@p.be",
+            "pwd": "test"
+        }
+    ]
+}
