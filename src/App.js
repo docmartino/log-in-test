@@ -1,6 +1,4 @@
 import "./styles/App.css";
-import LoginButton from "./components/LoginButton";
-import LogoutButton from "./components/LogoutButton";
 import Profile from "./components/Profile";
 import { useAuth0 } from "@auth0/auth0-react";
 import NavBar from "./structure/navBar";
@@ -13,8 +11,6 @@ function App() {
     <>
       <NavBar />
       <div className="App">
-        <LoginButton />
-        <LogoutButton />
         <Profile />
       </div>
     </>
