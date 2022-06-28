@@ -36,6 +36,8 @@ const Contact = () => {
   if (isAuthenticated) {
     return (
       <div className="contactContainer">
+        <h2> Want to contact me ? </h2>
+
         <div className="contactForm">
           <form ref={form} onSubmit={sendEmail} className="contact">
             <label>My name</label>
