@@ -1,0 +1,49 @@
+.navbar {
+    display: flex;
+    background-color: antiquewhite;
+    height: 80px;
+    align-items: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .navbar {
+        background-color: red;
+    }
+}
+
+
+
+
+.buttunLogIn {
+    position: fixed;
+    right: 0;
+}
+.logBtnIn {
+    border: 1px solid green;
+    color: green;
+}
+
+.buttunLogOut {
+    position: fixed;
+    right: 0;
+}
+
+.logBtnOut {
+    border: 1px solid red;
+    color: red;
+}
+
+h1 {
+    color : rgb(204, 82, 0);
+    padding: 10px;
+}
+
+button {
+    margin: 10px;
+    padding: 1rem 0rem 1rem 0rem;
+    width: 80px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  }

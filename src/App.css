@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  margin: 10px;
+  padding: 1rem 0rem 1rem 0rem;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.App {
+  /* background-color: aquamarine; */
+  padding:2rem;
+  margin:0;
+  height: 90vmin;
+}

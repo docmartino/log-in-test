@@ -8,10 +8,23 @@ const Profile = () => {
   return (
     (isAuthenticated && (
       <div className="profile">
-        <img src={user.picture} alt={user.name} />
+        <img src={user.picture} alt={user.name} className="profilepicture" />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
         <JSONPretty data={user} />
+        <input
+          type="text"
+          name="name"
+          defaultValue={user.name}
+          style={{ width: "200px" }}
+        />
+        <input
+          type="text"
+          name="name"
+        defaultValue={user.email}
+          style={{ width: "200px" }}
+        />
+
         {/* {JSON.stringify(user, null, 2)} */}
       </div>
     )) || <div className="profile">Please log in</div>

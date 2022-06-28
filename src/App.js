@@ -1,51 +1,32 @@
-import "./styles/App.css";
-import Profile from "./components/Profile";
+import "./App.css";
+import Profile from "./structure/profile/Profile";
+import Contact from "./structure/contact/Contact";
+import NavBar from "./structure/navbar/navBar";
+import Dashboard from "./structure/dashboard/Dashboard";
+import Wall from "./structure/wall/Wall";
 import { useAuth0 } from "@auth0/auth0-react";
-import NavBar from "./structure/navBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const { isLoading } = useAuth0();
+  const { isLoading, isAuthenticated } = useAuth0();
   if (isLoading) return <div>Loading...</div>;
 
   return (
     <>
-      <NavBar />
-      <div className="App">
-        <Profile />
-      </div>
+      <BrowserRouter>
+        <NavBar />
+        <div className="App">
+          <Routes>
+            {" "}
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path='/wall' element={<Wall />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
     </>
   );
 }
 
 export default App;
-
-/*
-
-      <div className="logContainer">
-        <div className="log">
-          <form className="form">
-            <label>
-              <input
-                type="text"
-                placeholder="UserName"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-              />
-            </label>
-            <label>
-              <input
-                type="password"
-                placeholder="Password"
-                value={pwd}
-                onChange={(e) => setPwd(e.target.value)}
-              />
-            </label>
-            <button type="submit" onClick={HandleSubmit}>
-              LOGIN
-            </button>
-          </form>
-        </div>
-      </div>
-
-
-      */

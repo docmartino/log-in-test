@@ -4,18 +4,15 @@ import { NavLink } from "react-router-dom";
 const ProfileButton = () => {
   const { isAuthenticated } = useAuth0();
 
-
-
   return (
     isAuthenticated && (
-        <div className="profile-button">
-            <NavLink to='/profile'>
-            <button className="btn btn-primary">
-              Profile
-            </button>
-            </NavLink>
-
-        </div>
+      <div className="profile-button">
+        <NavLink to="/contact">
+          <button className="btn btn-primary">
+            Contact
+          </button>
+        </NavLink>
+      </div>
     )
   );
 };
