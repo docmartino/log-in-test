@@ -3,7 +3,7 @@
     background-color: rgb(211, 211, 211);
     height: 80px;
     align-items: center;
-    font-family: Welbut;
+    /* font-family: Welbut; */
 }
 
 .buttunLogIn {
@@ -52,7 +52,7 @@ button {
 
 .burger-menu-item {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     size:20px;
     /* border-bottom: 1px solid black; */
     border-width: 0px 0px 1px 0px;

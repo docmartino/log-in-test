@@ -1,9 +1,10 @@
 import "./style/App.css";
 import NavBar from "./structure/navbar/navBar";
 import { useAuth0 } from "@auth0/auth0-react";
-import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LogBtn from "./components/buttonLogin";
 import BMenu from "./components/burgerMenu";
+import { Outlet } from "react-router-dom";
 
 function App() {
 

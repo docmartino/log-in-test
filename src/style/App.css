@@ -13,7 +13,7 @@
   }
 
   .btn {
-    border:0px;
+    border: 0px;
     box-shadow: none;
     background-color: transparent;
     padding: 15px;
@@ -23,12 +23,12 @@
   }
 
   .burger-menu-item {
-    border:0px;
+    border: 0px;
 
   }
 
   .burger-menu {
-    border:0px;
+    border: 0px;
   }
 
 
@@ -40,6 +40,7 @@
     opacity: 0;
     transform: translateX(-100%);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0%);
@@ -58,10 +59,10 @@
 
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Welbut';
   src: url(./Welbut.ttf) format('truetype');
-}
+} */
 
 
 
@@ -77,14 +78,6 @@
   padding: 2rem;
   margin: 0;
   background-color: rgb(255, 255, 255);
-}
-
-.profilepicture {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: block;
 }
 
 
@@ -173,4 +166,30 @@ body {
   100% {
     transform: rotate(405deg);
   }
+}
+
+
+/*  ---   PROFILE   ---    */
+
+.profilepicture {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.profile-pic {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.containerProfile {
+  margin-top : 10px;
+}
+
+.buttonProfile {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: center;
 }

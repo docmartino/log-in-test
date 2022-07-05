@@ -10,7 +10,7 @@ const LogBtn = () => {
 
       <div className="wrapper">
         
-        <a className="cta" href="#">
+        <a className="cta" href="http://localhost:3000">
           {!isAuthenticated && (
             <>
               {" "}

@@ -1,7 +1,6 @@
 import { useAuth0 } from "@auth0/auth0-react";
 import "../../style/wall.css";
 import axios from "../../api/axios";
-import { ReactComponent as Trash } from "../../assets/icons/trash.svg";
 
 const Wall = () => {
   const { user } = useAuth0();
@@ -17,29 +16,19 @@ const Wall = () => {
   };
 
   const SendPost = (e) => {
-    // let user_name = " ";
-    // let message = " ";
-    let informationArea = document.getElementById("testingArea");
-
     e.preventDefault();
+
     const date = new Date();
 
-    let postForDb = {
+    let post = {
       id_auth0: user.sub,
       user_name: e.target.user_name.value,
       message: e.target.message.value,
       date: date,
     };
 
-    let post = {
-      // id: user.sub,
-      user_name: e.target.user_name.value,
-      message: e.target.message.value,
-      // date: date,
-    };
-
     axios
-      .post("/posts", postForDb)
+      .post("/posts", post)
       .then((res) => {
         console.log(res);
         console.log(res.data);
@@ -47,13 +36,6 @@ const Wall = () => {
       .catch((err) => {
         console.log(err);
       });
-
-    // informationArea.innerText += "------------------------------------" + "\n";
-
-    // for (var [label, infos] of Object.entries(post)) {
-    //   console.log(label + ": " + infos);
-    //   informationArea.innerText += label + ": " + infos + "\n";
-    // }
 
     postButton();
     setTimeout(() => {
@@ -66,30 +48,37 @@ const Wall = () => {
     test.style.display = "none";
   };
 
-  const getPosts = () => {
+  const getPosts = (e) => {
+    let informationArea = document.getElementById("testingArea");
+    informationArea.innerHTML = " ";
 
     axios
       .get("/posts")
       .then((res) => {
         console.log(res.data);
-        res.data.map((posts) => {
-          let informationArea = document.getElementById("testingArea");  
 
-          let div = informationArea.appendChild(document.createElement("div"));
+        res.data.map((data) => {
+          // Div Creation
+          let div = informationArea.insertBefore(
+            document.createElement("div"),
+            informationArea.firstChild
+          );
           div.innerText = " ";
-          div.innerText +=
-            "name: " +
-            posts.user_name +
-            " message: " +
-            posts.message +
+          div.innerText =
+            "Name: " +
+            data.user_name +
             "\n" +
+            " Message: " +
+            data.message +
             "\n";
-
+          div.id = data.id;
+          // Button Creation
           let button = div.appendChild(document.createElement("button"));
           button.innerHTML = "Delete";
           button.style.padding = "3px";
           button.style.margin = "3px";
-
+          button.onclick = DeleteList;
+          // Para Creation
           let p = div.appendChild(document.createElement("p"));
           p.innerHTML += "\n" + "------------------------------------" + "\n";
         });
@@ -103,7 +92,21 @@ const Wall = () => {
       });
   };
 
-  getPosts();
+  const DeleteList = (e) => {
+    e.preventDefault();
+    console.log(e.target.parentNode.id);
+    let id = e.target.parentNode.id;
+    axios.delete(`/posts/${id}`).then((res) => {
+      console.log(res);
+      console.log(res.data);
+    });
+    setTimeout(() => {
+      getPosts();
+    }, 500);
+  };
+  setTimeout(() => {
+    getPosts();
+  }, 50);
 
   const { isAuthenticated } = useAuth0();
 
@@ -144,7 +147,7 @@ const Wall = () => {
         <div>
           {" "}
           <h2 style={{ textAlign: "center" }}>TESTING</h2>
-          <div id="testingArea"></div>
+          <div id="testingArea"> </div>
         </div>
       </div>
     );

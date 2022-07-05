@@ -1,5 +1,4 @@
 import { ReactComponent as Burger } from "../assets/icons/burger.svg";
-import { NavLink } from "react-router-dom";
 
 const BurgerDiv = () => {
   const Clicked = () => {
