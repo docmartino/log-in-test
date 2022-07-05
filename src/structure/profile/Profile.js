@@ -49,8 +49,8 @@ const Profile = () => {
             <button>Save change</button>
           </div>
 
-          <div style={{ width: "100%", marginTop: "25px" }}>
-            {JSON.stringify(user, null, 2)}
+          <div style={{ width: "100%", marginTop: "25px", textAlign: "justify" }}>
+            {/* {JSON.stringify(user, null, 2)} */}
             {/* <JSONPretty data={user} /> */}
           </div>
         </div>
