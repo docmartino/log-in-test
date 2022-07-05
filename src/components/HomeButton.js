@@ -5,7 +5,7 @@ const HomeButton = () => {
   const { isAuthenticated } = useAuth0();
   return (
     isAuthenticated && (
-      <div className="home-button">
+      <div className="home-button menu-BTN">
         <NavLink to="/">
           <button className="btn btn-primary">Home</button>
         </NavLink>

@@ -4,20 +4,23 @@ import ProfileButton from "../../components/ProfileButton";
 import ContactButton from "../../components/ContactButton";
 import Home from "../../components/HomeButton";
 import Wall from "../../components/WallButton";
-import './navbar.css'
+import "../../style/navbar.css";
 
 const NavBar = () => {
   return (
     <nav className="navbar">
-      <h1> Yopla App </h1>
+      <h1> My App  </h1>
+      <div className='btnNavBarMenu'>
       <Home />
       <Wall />
       <ProfileButton />
       <ContactButton />
+      </div>
       <LoginButton/>
       <LogoutButton />
+
     </nav>
   );
 };
-
 export default NavBar;
+

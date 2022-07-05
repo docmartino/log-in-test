@@ -1,6 +1,6 @@
 // https://www.emailjs.com/docs/examples/reactjs/
 
-import "./contact.css";
+// import "./contact.css";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import React, { useRef } from "react";
@@ -36,25 +36,25 @@ const Contact = () => {
   if (isAuthenticated) {
     return (
       <div className="contactContainer">
-        <h2> Want to contact me ? </h2>
+        <h2 style={{textAlign:'center'}}>  Want to contact me ? </h2>
 
         <div className="contactForm">
           <form ref={form} onSubmit={sendEmail} className="contact">
-            <label>My name</label>
+            <label>Your name</label>
             <input
               type="text"
               name="user_name"
               value={user.name}
               onChange={() => {}}
             />
-            <label>My email</label>
+            <label>Your email</label>
             <input
               type="email"
               name="user_email"
               value={user.email}
               onChange={() => {}}
             />
-            <label>Message</label>
+            <label>Your message</label>
             <textarea name="message" />
             <input type="submit" value="Send" className="contactBTN" />
           </form>

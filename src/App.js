@@ -1,30 +1,23 @@
-import "./App.css";
-import Profile from "./structure/profile/Profile";
-import Contact from "./structure/contact/Contact";
+import "./style/App.css";
 import NavBar from "./structure/navbar/navBar";
-import Dashboard from "./structure/dashboard/Dashboard";
-import Wall from "./structure/wall/Wall";
 import { useAuth0 } from "@auth0/auth0-react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import LogBtn from "./components/buttonLogin";
+import BMenu from "./components/burgerMenu";
 
 function App() {
+
   const { isLoading, isAuthenticated } = useAuth0();
-  if (isLoading) return <div>Loading...</div>;
+  
+  if (isLoading) return <div className="ring">Loading<span id="loading"></span></div>;
 
   return (
     <>
-      <BrowserRouter>
-        <NavBar />
-        <div className="App">
-          <Routes>
-            {" "}
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path='/wall' element={<Wall />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
+      {isAuthenticated ? <NavBar /> : <LogBtn />}
+      <BMenu/>
+      <div className="App">
+        <Outlet />
+      </div>
     </>
   );
 }

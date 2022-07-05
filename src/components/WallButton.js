@@ -5,7 +5,7 @@ const WallButton = () => {
   const { isAuthenticated } = useAuth0();
   return (
     isAuthenticated && (
-      <div className="wall-button">
+      <div className="wall-button menu-BTN">
         <NavLink to="/wall">
           <button className="btn btn-primary">Wall</button>
         </NavLink>

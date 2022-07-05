@@ -8,7 +8,7 @@ const ProfileButton = () => {
 
   return (
     isAuthenticated && (
-        <div className="profile-button">
+        <div className="profile-button menu-BTN">
             <NavLink to='/profile'>
             <button className="btn btn-primary">
               Profile
